@@ -82,27 +82,6 @@ set(BUILD_TOOLS OFF CACHE BOOL "")
 set(BUILD_TESTING OFF CACHE BOOL "")
 set(CATKIN_ENABLE_TESTING OFF CACHE BOOL "")
 
-if(NOT catkin_FOUND AND NOT ament_cmake_FOUND)
-
-    if(NOT EXISTS depend/BehaviorTree.CPP)
-      message("Can't find the submodule BehaviorTree.CPP")
-      message("Run [git submodule update --init --recursive]")
-    endif()
-
-    SET(BUILD_EXAMPLES OFF CACHE BOOL "Build tutorials and examples" FORCE)
-    SET(BUILD_UNIT_TESTS OFF CACHE BOOL "Build the unit tests" FORCE)
-    SET(BUILD_SHARED_LIBS OFF CACHE BOOL "Build shared libraries" FORCE)
-
-    # look for BehaviorTree.CPP as submodule
-    # use git submodule only if you are not compiling with catkin
-    add_subdirectory( depend/BehaviorTree.CPP )
-    include_directories( depend/BehaviorTree.CPP/include )
-
-    message(STATUS "----------------------------------")
-    message(STATUS "BehaviourTree.CPP submodule found.")
-    message(STATUS "----------------------------------")
-endif()
-
 ##########################################
 
 set(APP_CPPS
