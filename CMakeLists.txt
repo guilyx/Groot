@@ -19,7 +19,7 @@ else()
 endif()
 
 #############################################################
-find_package(ament_cmake QUIET)
+find_package(ament_cmake)
 find_package(catkin QUIET)
 
 if(ament_cmake_FOUND)
